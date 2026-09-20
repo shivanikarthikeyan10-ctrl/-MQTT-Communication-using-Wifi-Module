@@ -19,6 +19,7 @@ To control an electrical device remotely through a cloud platform using MQTT com
 - MQTT Broker / MQTT Service
 
 # Circuit Diagram
+<img width="1536" height="1024" alt="WhatsApp Image 2026-09-20 at 2 41 22 PM" src="https://github.com/user-attachments/assets/76424714-b1e0-45e8-bc03-32cf790385a7" />
 
 ---
 To upload
@@ -91,12 +92,52 @@ To upload
 7. Record the commands and corresponding device states.
 
 # Program
+```
+import network
+import time
+from machine import Pin
 
+# LED on GP2
+led = Pin(2, Pin.OUT)
+led.off()
 
+# Wi-Fi settings
+SSID = "Wokwi-GUEST"
+PASSWORD = ""
 
+print("================================")
+print(" CLOUD DEVICE CONTROL")
+print(" Raspberry Pi Pico W")
+print("================================")
+
+# Connect to Wi-Fi
+print("Connecting to Wi-Fi...")
+
+wifi = network.WLAN(network.STA_IF)
+wifi.active(True)
+wifi.connect(SSID, PASSWORD)
+
+while not wifi.isconnected():
+    print("Connecting to Wi-Fi...")
+    time.sleep(1)
+
+print("Wi-Fi connected")
+print("IP address:", wifi.ifconfig()[0])
+
+print("--------------------------------")
+print("Wi-Fi connection successful")
+print("Waiting...")
+print("--------------------------------")
+
+while True:
+    time.sleep(2)
+```
 > **Note:** The above program is written for an **ESP32** using the `WiFi.h` library. Replace the Wi-Fi credentials, MQTT broker address, and MQTT topic with the values used in the laboratory setup.
 
 # Observation
+<img width="1255" height="853" alt="WhatsApp Image 2026-09-20 at 2 54 26 PM" src="https://github.com/user-attachments/assets/3f0c513d-2f9d-4eff-81c8-0703fe4a0ee3" />
+
+ <img width="358" height="531" alt="image" src="https://github.com/user-attachments/assets/7e678ee1-7afe-4aa4-a6cf-279f0d337599" /> <img width="358" height="501" alt="image" src="https://github.com/user-attachments/assets/bdf13df3-4043-4041-99d1-64b823c47ef5" />
 
 
 # Result
