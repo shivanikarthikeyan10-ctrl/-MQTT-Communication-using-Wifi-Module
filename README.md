@@ -132,6 +132,9 @@ void loop()
 # Observation
 <img width="358" height="531" alt="image" src="https://github.com/user-attachments/assets/27a4d9d6-09e3-4790-84f9-b35e43a547ff" /> <img width="358" height="501" alt="image" src="https://github.com/user-attachments/assets/d69821d7-f859-4667-a9ba-b3a5eea75f0d" />
 
+<img width="1600" height="1599" alt="image" src="https://github.com/user-attachments/assets/91914741-f446-40d9-97f2-de0319024dc7" />
+
+
 
 # Result
 
